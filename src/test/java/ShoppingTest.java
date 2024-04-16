@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package AddItem;
+=======
+package java;
+>>>>>>> 7b062af (Login Test Deleted)
 
 import Application.HomePage;
 import org.openqa.selenium.WebDriver;
