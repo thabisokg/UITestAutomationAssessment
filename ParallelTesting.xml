@@ -1,0 +1,19 @@
+
+        <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ParallelTestsSuite" parallel="tests" thread-count="2">
+<test name="EdgeTest">
+    <parameter name="browser" value="edge" />
+    <classes>
+        <class name="ApplicationTest.InvalidLoginTest" />
+        <class name="ApplicationTest.ValidLoginTest" />
+    </classes>
+</test>
+
+<test name="FirefoxTest">
+    <parameter name="browser" value="firefox" />
+    <classes>
+        <class name="ApplicationTest.InvalidLoginTest" />
+        <class name="ApplicationTest.ValidLoginTest" />
+    </classes>
+</test>
+</suite>
