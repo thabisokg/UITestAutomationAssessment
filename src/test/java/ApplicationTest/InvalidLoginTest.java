@@ -1,4 +1,4 @@
-package ApplicationTest;
+package java.ApplicationTest;
 
 import Application.Login.LoginPage;
 import Utilities.BrowserUtils;
@@ -46,10 +46,10 @@ public class InvalidLoginTest {
             captureScreenshot("invalid_login_attempt");
         } catch (Exception e) {
             // Add logging for any exceptions during login attempt
-            logger.error("Error: " + e.getMessage());
+            logger.error(STR."Error: \{e.getMessage()}");
 
             // Capture screenshot for the error scenario
-            captureScreenshot("error_" + System.currentTimeMillis());
+            captureScreenshot(STR."error_\{System.currentTimeMillis()}");
         }
     }
 

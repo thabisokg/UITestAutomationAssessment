@@ -1,4 +1,4 @@
-package ApplicationTest;
+package java.ApplicationTest;
 
 import Application.Cart.CartPage;
 import Application.Checkout.CheckoutPage;
@@ -20,7 +20,7 @@ import java.net.URL;
 import java.util.List;
 
 public class ValidLoginTest {
-    private static final Logger logger = LogManager.getLogger(InvalidLoginTest.class);
+    private static final Logger logger = LogManager.getLogger(ValidLoginTest.class);
     private WebDriver driver;
     private List<Credential> credentials;
 
@@ -38,8 +38,8 @@ public class ValidLoginTest {
             LoginPage loginPage = new LoginPage(driver);
             Thread.sleep(2000);
 
-            loginPage.username(credentials.get(0).getUserName());
-            loginPage.password(credentials.get(0).getPassword());
+            loginPage.username(credentials.getFirst().getUserName());
+            loginPage.password(credentials.getFirst().getPassword());
             loginPage.clickLoginButton();
             Thread.sleep(2000);
 
@@ -69,8 +69,8 @@ public class ValidLoginTest {
             LoginPage loginPage = new LoginPage(driver);
             Thread.sleep(2000);
 
-            loginPage.username(credentials.get(0).getUserName());
-            loginPage.password(credentials.get(0).getPassword());
+            loginPage.username(credentials.getFirst().getUserName());
+            loginPage.password(credentials.getFirst().getPassword());
             loginPage.clickLoginButton();
             Thread.sleep(2000);
             logger.info("Logged in successfully.");
@@ -87,8 +87,8 @@ public class ValidLoginTest {
             captureScreenshot("add_to_cart_success");
 
         } catch (Exception e) {
-            logger.error("Error: " + e.getMessage());
-            captureScreenshot("error_" + System.currentTimeMillis());
+            logger.error(STR."Error: \{e.getMessage()}");
+            captureScreenshot(STR."error_\{System.currentTimeMillis()}");
         }
     }
 
@@ -98,7 +98,7 @@ public class ValidLoginTest {
             CheckoutPage checkoutPage = new CheckoutPage(driver);
             Thread.sleep(6000);
 
-            checkoutPage.enterFirstName();
+            checkoutPage.enterFirstName("Tumelo");
             checkoutPage.enterLastName("Lebogo");
             checkoutPage.enterZipCode("2090");
             checkoutPage.clickContinue();
@@ -106,8 +106,8 @@ public class ValidLoginTest {
             logger.info("Order placed successfully.");
             captureScreenshot("order_placed");
         } catch (Exception e) {
-            logger.error("Error: " + e.getMessage());
-            captureScreenshot("error_" + System.currentTimeMillis());
+            logger.error(STR."Error: \{e.getMessage()}");
+            captureScreenshot(STR."error_\{System.currentTimeMillis()}");
         }
     }
 
@@ -126,8 +126,8 @@ public class ValidLoginTest {
                 captureScreenshot("order_confirmation_missing");
             }
         } catch (Exception e) {
-            logger.error("Error: " + e.getMessage());
-            captureScreenshot("error_" + System.currentTimeMillis());
+            logger.error(STR."Error: \{e.getMessage()}");
+            captureScreenshot(STR."error_\{System.currentTimeMillis()}");
         }
     }
 

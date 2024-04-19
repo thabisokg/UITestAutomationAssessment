@@ -1,19 +1,20 @@
-package Application;
+package Application.Confirmation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ConfirmationPage {
+    private final WebDriver driver;
 
-    private WebDriver driver;
-    private By orderSuccessMessage = By.id("Add Confirmation message id");
+    // Locators
+    private final By confirmationMessage = By.xpath("//*[@id=\"checkout_complete_container\"]/h2");
+
     public ConfirmationPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public boolean isOrderSuccessful(){
-        return driver.findElement(orderSuccessMessage).isDisplayed();
+    // Method to verify order confirmation
+    public boolean isOrderConfirmed() {
+        return driver.findElement(confirmationMessage).isDisplayed();
     }
-
-        //Add more methods for order confirmation as needed
 }

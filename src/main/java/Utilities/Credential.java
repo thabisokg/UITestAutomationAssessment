@@ -2,7 +2,7 @@ package Utilities;
 import com.poiji.annotation.ExcelCellName;
 import com.poiji.annotation.ExcelSheet;
 
-@ExcelSheet("Sheet1")
+@ExcelSheet("LoginData")
 public class Credential {
 
     @ExcelCellName("Username")
